@@ -5,7 +5,7 @@ import API, { apiErrorHandler, auth } from '../../api';
 import Loading from '../loading/loading';
 import Modal from '../modal/modal';
 import CloseAlert from '../asset/close alert.png';
-import { SET_TOKEN } from '../../redux/constants/constants';
+import { SET_TOKEN, SET_USER } from '../../redux/constants/constants';
 import { connect } from 'react-redux';
 
 
@@ -23,9 +23,11 @@ const Login = ({ dispatch }) => {
     const loginHandler = async () => {
         try{
             const response = await auth.login(loginObject);
+            console.log(response)
             const token = response.data.auth.token;
             if(response.data.role == 'super_admin'){
                 dispatch({ type: SET_TOKEN, payload: token });
+                dispatch({ type: SET_USER, payload: response.data})
                 history.push('/admin');
                 setLoading(false);
                 API.http.defaults.headers.common['Authorization'] = `Bearer ${token}`;

@@ -6,17 +6,21 @@ import { useState } from 'react';
 import { apiErrorHandler, requests } from '../../../api';
 import Loading from '../../loading/loading';
 import { connect } from 'react-redux';
+import { useHistory } from 'react-router';
 
 const AdminCreateInvestment = ({ token }) => {
+
+
+    const history = useHistory();
 
     const [ loading, setLoading ] = useState(false);
     const [ createInvestmentData, setCreateInvestmentData ] = useState({
             name: "",
-            slug: "",
+            slug: undefined,
             price: null,
             interestRate: null,
             tenor: null,
-            coverImage: "",
+            coverImage: undefined,
             description: ""
     });
 
@@ -25,9 +29,10 @@ const AdminCreateInvestment = ({ token }) => {
             const response = await requests.createInvestmentPlans(createInvestmentData);
             console.log(response);
             setLoading(false);
+            history.push('/admin');
         }catch(error){
             const { message } = apiErrorHandler(error);
-            // console.log(message);
+            console.log(message);
         }
     }
 
@@ -36,94 +41,91 @@ const AdminCreateInvestment = ({ token }) => {
             <div>
 
                 <AdminNavCreate />
-                    {/* <div id = 'profile-content'>
-                        <h3 id = 'profile-title'>Create A New Investment Plan</h3>
 
-                        <form>
-                            <div className = 'Input-holder'>
-                                <label>Investment Name</label>
-                                <input 
-                                    onChange = { e => {
-                                        setCreateInvestmentData({
-                                            ...createInvestmentData, name: e.target.value
-                                        });
-                                    }}
-                                    className = 'Input' 
-                                    type = 'text' 
-                                    placeholder = 'Investment name' 
-                                />
-                            </div>
-                            <div className = 'Input-holder'>
-                                <label>Price</label>
-                                <input 
-                                    onChange = { e => {
-                                        setCreateInvestmentData({
-                                            ...createInvestmentData, price: Number(e.target.value)
-                                        });
-                                    }}
-                                    className = 'Input' 
-                                    type = 'number' 
-                                    placeholder = 'Price' 
-                                />
-                            </div>
-                            <div className = 'Input-holder'>
-                                <label>Interest Rate</label>
-                                <input 
-                                    onChange = { e => {
-                                        setCreateInvestmentData({
-                                            ...createInvestmentData, interestRate: Number(e.target.value)
-                                        });
-                                    }}
-                                    className = 'Input' 
-                                    type = 'text' 
-                                    placeholder = 'Interest rate' 
-                                />
-                            </div>
-                            <div className = 'Input-holder'>
-                                <label>Tenure</label>
-                                <input 
-                                    onChange = { e => {
-                                        setCreateInvestmentData({
-                                            ...createInvestmentData, tenor: Number(e.target.value)
-                                        });
-                                    }}
-                                    className = 'Input' 
-                                    type = 'text' 
-                                    placeholder = 'Tenure' 
-                                />
-                            </div>
-                            <div className = 'Input-holder'>
-                                <label>Description</label>
-                                <input 
-                                    onChange = { e => {
-                                        setCreateInvestmentData({
-                                            ...createInvestmentData, description: e.target.value
-                                        });
-                                    }}
-                                    className = 'Input' 
-                                    type = 'text' 
-                                    placeholder = 'Description' 
-                                />
-                            </div>
-                        </form>
-                        <button 
-                            onClick = { () => {
-                                createInvestmentPlansHandler();
-                                setLoading(true);
-                                console.log(createInvestmentData);
-                                console.log(token)
-                            }}
-                            id = 'register-button'
-                        >
-                            Create Plan
-                        </button>
-                    </div> */}
-                <DashboardInfo>
-                    <div id = 'make-investment'>
-                        <i id = 'invest-icon' className = 'fas fa-hand-holding-usd'></i>
-                        <p>Make new investment</p>
-                    </div>
-                </DashboardInfo>
+                <div id = 'profile-content'>
+                    <h3 id = 'profile-title'>Create A New Investment Plan</h3>
+
+                    <form onSubmit = { e => e.preventDefault() }>
+                        <div className = 'Input-holder'>
+                            <label>Investment Name</label>
+                            <input 
+                                onChange = { e => {
+                                    setCreateInvestmentData({
+                                        ...createInvestmentData, name: e.target.value
+                                    });
+                                }}
+                                className = 'Input' 
+                                type = 'text' 
+                                placeholder = 'Investment name' 
+                            />
+                        </div>
+                        <div className = 'Input-holder'>
+                            <label>Price</label>
+                            <input 
+                                onChange = { e => {
+                                    setCreateInvestmentData({
+                                        ...createInvestmentData, price: Number(e.target.value)
+                                    });
+                                }}
+                                className = 'Input' 
+                                type = 'number' 
+                                placeholder = 'Price' 
+                            />
+                        </div>
+                        <div className = 'Input-holder'>
+                            <label>Interest Rate</label>
+                            <input 
+                                onChange = { e => {
+                                    setCreateInvestmentData({
+                                        ...createInvestmentData, interestRate: Number(e.target.value)
+                                    });
+                                }}
+                                className = 'Input' 
+                                type = 'text' 
+                                placeholder = 'Interest rate' 
+                            />
+                        </div>
+                        <div className = 'Input-holder'>
+                            <label>Tenure</label>
+                            <input 
+                                onChange = { e => {
+                                    setCreateInvestmentData({
+                                        ...createInvestmentData, tenor: Number(e.target.value)
+                                    });
+                                }}
+                                className = 'Input' 
+                                type = 'text' 
+                                placeholder = 'Tenure' 
+                            />
+                        </div>
+                        <div className = 'Input-holder'>
+                            <label>Description</label>
+                            <input 
+                                onChange = { e => {
+                                    setCreateInvestmentData({
+                                        ...createInvestmentData, description: e.target.value
+                                    });
+                                }}
+                                className = 'Input' 
+                                type = 'text' 
+                                placeholder = 'Description' 
+                            />
+                        </div>
+                    </form>
+                    <button 
+                        onClick = { () => {
+                            createInvestmentPlansHandler();
+                            setLoading(true);
+                            console.log(createInvestmentData);
+                            console.log(token)
+                        }}
+                        id = 'register-button'
+                    >
+                        Create Plan
+                    </button>
+                </div>
+
+                <DashboardInfo />
 
             </div>
 

@@ -4,7 +4,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: white;
-    width: 30%;
+    width: 50%;
     height: auto;
     padding: 2rem;
     border-radius: 5px;
@@ -12,25 +12,23 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    height: 90vh;
+    overflow-y: scroll;
 }
 
 #exit-icon{
-    width: 20px;
-    height: 20px;
+    width: 3rem;
+    height: 3rem;
     color: rgb(245, 9, 9);
     cursor: pointer;
-    background-color: #d1d1dd;
-    font-size: 1rem;
-    border: 2px;
-    padding: 2px;
+    background-color: #ebebf3;
+    font-size: 2rem;
+    padding: .5rem;
     font-weight: 300;
 }
 
-#modal-top{
-    display: flex;
+#investment-plans-top{
     width: 100%;
-    justify-content: space-between;
-    padding-bottom: .7rem;
 }
 
 #investment-plans-button{
@@ -57,4 +55,19 @@
     bottom: 0;
     right: 0;
     left: 0;
+}
+
+#close-icon-holder{
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.Plan{
+    width: 100%;
+    background-color: grey;
+    height: 4rem;
+    margin-top: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
 }

@@ -2,10 +2,15 @@ import DashboardInfo from '../dashboard-info/dashboard-info';
 import DashboardNavProfile from '../dashboard-nav/dashboard-nav-profile';
 import './profile.css';
 import Footer from '../../footer/footer';
+import { useState } from 'react';
+import InvestmentPlans from '../../investment-plans/investment-plans';
 
 const Profile = () => {
+    
+    const [ makeInvestment, setMakeInvestment ] = useState(false);
+
     return(
-        <div className = 'Profile'>
+        <div className = 'Create-investment'>
             <div>
 
                 <DashboardNavProfile />
@@ -30,14 +35,36 @@ const Profile = () => {
                             <input className = 'Input' type = 'password' placeholder = 'Password' />
                         </div>
                     </form>
-                    <button id = 'dashboard-profile-button'>Save</button>
+                    <button id = 'register-button'>Save</button>
                 </div>
 
-                <DashboardInfo />
+                <DashboardInfo>
+                    <div 
+                        onClick = { () => {
+                            setMakeInvestment(true);
+                        }}
+                        id = 'make-investment'
+                    >
+                        <i id = 'invest-icon' className = 'fas fa-hand-holding-usd'></i>
+                        <p>Make new investment</p>
+                    </div>
+                </DashboardInfo>
 
             </div>
 
             <Footer />
+
+            {
+                makeInvestment ?
+                
+                <InvestmentPlans
+                    onClick = { () => {
+                        setMakeInvestment(false);
+                    }}
+                />
+
+                : ''
+            }
         </div>
     )
 }

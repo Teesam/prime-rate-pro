@@ -6,6 +6,7 @@ import {
 } from '../redux/constants/string-values';
 import Auth from './auth/auth';
 import Requests from './admin/requests';
+import UserRequests from './user/user-requests';
 
 const requestTimeoutMills = 15000;
 
@@ -62,6 +63,7 @@ const http = new HttpClient({ baseURL: 'https://primerate.herokuapp.com/api/v1'}
 
 export const auth = new Auth(http);
 export const requests = new Requests(http);
+export const userRequest = new UserRequests(http);
 
 export default {
   http: http.httpClient,
