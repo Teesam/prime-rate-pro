@@ -1,0 +1,35 @@
+.Profile > div{
+    position: relative;
+    display: flex;
+}
+
+#profile-content{
+    margin-left: 3rem;
+    width: 73%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 90vh;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    padding: 3rem 0;
+}
+
+#profile-content > form{
+    margin-top: 3rem;
+    width: 60%;
+}
+
+#dashboard-profile-button{
+    padding: 1rem 2rem;
+    background-color: rgb(175, 114, 1);
+    border-radius: 5px;
+    border: none;
+    color: white;
+    margin-top: 2rem;
+    cursor: pointer;
+}
+
+#profile-title{
+    color: var(--orange);
+}

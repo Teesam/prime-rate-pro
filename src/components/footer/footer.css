@@ -1,0 +1,29 @@
+.Footer{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    height: 4rem;
+    background-color: rgba(253, 223, 179, 0.993);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5rem;
+}
+
+.Footer > div{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.Footer-icon{
+    font-size: 1.5rem;
+    color: black;
+    margin-right: 1rem;
+    cursor: pointer;
+}
+
+.Footer-sub-item{
+    margin-right: 2rem;
+}
