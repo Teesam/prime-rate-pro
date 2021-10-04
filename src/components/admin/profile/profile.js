@@ -5,7 +5,7 @@ import AdminNavProfile from '../admin-nav/admin-nav-profile';
 
 const AdminProfile = () => {
     return(
-        <div className = 'Dashboard'>
+        <div className = 'Create-investment'>
             <div>
 
                 <AdminNavProfile />

@@ -5,7 +5,7 @@ import AdminNavInvestors from '../admin-nav/admin-nav-investors';
 
 const AdminInvestors = () => {
     return(
-        <div className = 'Dashboard'>
+        <div className = 'Create-investment'>
             <div>
 
                 <AdminNavInvestors />

@@ -36,7 +36,7 @@ const AdminCreateInvestment = ({ token }) => {
             <div>
 
                 <AdminNavCreate />
-                    <div id = 'profile-content'>
+                    {/* <div id = 'profile-content'>
                         <h3 id = 'profile-title'>Create A New Investment Plan</h3>
 
                         <form>
@@ -117,7 +117,7 @@ const AdminCreateInvestment = ({ token }) => {
                         >
                             Create Plan
                         </button>
-                    </div>
+                    </div> */}
                 <DashboardInfo>
                     <div id = 'make-investment'>
                         <i id = 'invest-icon' className = 'fas fa-hand-holding-usd'></i>
