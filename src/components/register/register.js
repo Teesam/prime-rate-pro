@@ -53,7 +53,7 @@ const Register = () => {
                 <h2>Create Your Free Account</h2>
                 <div>
                     <p>Already have an account?</p>
-                    <button onClick = { () => history.push('/login')} className = 'Nav-item Login'>Login</button>
+                    <button onClick = { () => history.push('/login')} id = 'login'>Login</button>
                 </div>
                 <form id = 'register-form' onSubmit = { e => e.preventDefault()}>
                     <div className = 'Input-holder'>

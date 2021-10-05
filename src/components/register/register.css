@@ -132,6 +132,15 @@
     cursor: pointer;
 }
 
+#login{
+    color: var(--orange);
+    background-color: transparent;
+    border: none;
+    margin-left: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
 
 
 
@@ -281,5 +290,170 @@
         cursor: pointer;
     }
     
+    #login{
+        color: var(--orange);
+        background-color: transparent;
+        border: none;
+        margin-left: 1rem;
+        font-weight: 600;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 490px){
+
+    .Register{
+        background-image: url('../asset/Background\ Pattern.jpg');
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 5rem;
+    }
+    
+    #logo-holder{
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+        margin-top: 2rem;
+    }
+    
+    #logo{
+        margin-left: 7rem;
+        cursor: pointer;
+    }
+    
+    #form-holder{
+        background-color: white;
+        height: 70%;
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0px 5px 15px 0px rgb(235, 233, 233);
+        border-radius: 5px;
+        padding-bottom: 4rem;
+        padding-top: 1rem;
+        margin-top: 4rem;
+    }
+    
+    #form-holder > h2{
+        color: var(--orange);
+    }
+    
+    #form-holder > div{
+        display: flex;
+        align-items: center;
+    }
+    
+    #form-holder > div > p{
+        font-size: .8rem;
+    }
+    
+    #register-form{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .Input{
+        padding: 1rem;
+        border-radius: 7px;
+        border: 1px solid var(--grey);
+        width: 100%;
+    }
+    
+    .Input-holder{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 80%;
+        margin-top: 1rem;
+    }
+    
+    #register-button{
+        background-color: var(--yellow);
+        border: 1px solid transparent;
+        border-radius: 5px;
+        padding: 1rem;
+        color: white;
+        margin-top: 2rem;
+        cursor: pointer;
+        transition: .3s ease-in-out;
+    }
+    
+    #register-button:hover{
+        background-color: transparent;
+        color: var(--yellow);
+        border: 1px solid var(--yellow);
+    }
+    
+    .Checkbox-input-holder{
+        display: flex;
+        align-items: flex-start;
+        width: 80%;
+        margin-top: 1rem;
+    }
+    
+    .Checkbox-input-holder > label{
+        font-size: .6rem;
+        text-align: start;
+        margin-left: .5rem;
+    }
+    
+    #register-modal-button{
+        background-color: var(--yellow);
+        border: 1px solid transparent;
+        border-radius: 5px;
+        padding: 1rem;
+        color: white;
+        margin-top: 2rem;
+        cursor: pointer;
+        transition: .3s ease-in-out;
+    }
+    
+    #register-modal-button:hover{
+        background-color: transparent;
+        color: var(--yellow);
+        border: 1px solid var(--yellow);
+    }
+    
+    #modal-unsuccessful-text{
+        color: red;
+        margin-top: 2rem;
+    }
+    
+    #modal-successful-text{
+        margin-top: 2rem;
+    }
+    
+    .Register-check-box{
+        width: 1rem;
+        height: 1rem;
+        cursor: pointer;
+    }
+
+    #login{
+        color: var(--orange);
+        background-color: transparent;
+        border: none;
+        margin-left: 1rem;
+        font-weight: 600;
+    }
 
 }

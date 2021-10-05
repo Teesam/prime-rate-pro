@@ -1,6 +1,7 @@
 import './nav.css';
 import { useHistory } from 'react-router';
 import { useState } from 'react';
+import MobileNav from '../mobile-nav/mobile-nav';
 
 const Nav = () => {
 
@@ -30,30 +31,26 @@ const Nav = () => {
                 </ul>
             </div>
 
-            <div
+            <MobileNav 
                 onClick = { () => setShowMenu(!showMenu)}
-                id = 'hambugger'
-            >
-                <div id = { showMenu === false ? 'ham1' : 'ham1-alt' }></div>
-                <div id = { showMenu === false ? 'ham2' : 'ham2-alt' }></div>
-                <div id = { showMenu === false ? 'ham3' : 'ham3-alt' }></div>
-            </div>
+                showMenu = { showMenu }
+            />
 
             {
                 showMenu ?
 
                 <div id = 'ham-menu'>
                         <li>
-                            <button onClick = { () => history.push('/')} className = 'Nav-item'>Home</button>
+                            <button onClick = { () => history.push('/')} className = 'Nav-item'>.Home</button>
                         </li>
                         <li>
-                            <button className = 'Nav-item'>Invest</button>
+                            <button className = 'Nav-item'>.Investment Plans</button>
                         </li>
                         <li>
-                            <button onClick = { () => history.push('/login')} className = 'Nav-item Login'>Login</button>
+                            <button onClick = { () => history.push('/login')} className = 'Nav-item Login'>.Login</button>
                         </li>
                         <li>
-                            <button id = 'sign-up' onClick = { () => history.push('/register')} className = 'Nav-item Sign-up-button'>Sign Up for Free</button>
+                            <button id = 'sign-up' onClick = { () => history.push('/register')} className = 'Nav-item Sign-up-button'>.Sign Up for Free</button>
                         </li>
                 </div>
                 : ''

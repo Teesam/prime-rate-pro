@@ -63,7 +63,7 @@ const Login = ({ dispatch }) => {
                 <h2>Login</h2>
                 <div>
                     <p>Don't have an account?</p>
-                    <button onClick = { () => history.push('/register')} className = 'Nav-item Login'>Sign up here</button>
+                    <button onClick = { () => history.push('/register')} id = 'login'>Sign up here</button>
                 </div>
                 <form id = 'register-form' onSubmit = { e => e.preventDefault() }>
                     <div className = 'Input-holder'>
