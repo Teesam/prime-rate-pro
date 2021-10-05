@@ -5,6 +5,7 @@ import { apiErrorHandler, auth } from '../../api';
 import Loading from '../loading/loading';
 import Modal from '../modal/modal';
 import CloseAlert from '../asset/close alert.png';
+import Nav from '../nav/nav';
 
 const Register = () => {
 
@@ -45,7 +46,8 @@ const Register = () => {
     return(
         <div className = 'Register'>
             <div id = 'logo-holder'>
-                <h2 onClick = { () => history.push('/')} id = 'logo'>Logo</h2>
+                {/* <h2 onClick = { () => history.push('/')} id = 'logo'>Logo</h2> */}
+                <Nav />
             </div>
             <div id = 'form-holder'>
                 <h2>Create Your Free Account</h2>

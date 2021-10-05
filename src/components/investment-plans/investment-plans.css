@@ -27,7 +27,7 @@
     font-weight: 300;
 }
 
-#investment-plans-top{
+#investment-plans-holder{
     width: 100%;
 }
 
@@ -65,9 +65,59 @@
 
 .Plan{
     width: 100%;
-    background-color: grey;
-    height: 4rem;
+    background-image: url('../asset/invest\ \ background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: auto;
     margin-top: 1rem;
     border-radius: 5px;
     cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    color: white;
+    position: relative;
+}
+
+#plans-overlay{
+    background-color: black;
+    opacity: .8;
+    position: absolute;
+    border-radius: 5px;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+}
+
+.Plan-name{
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: .5rem;
+}
+
+.Invest-button{
+    padding: .5rem 2rem;
+    border-radius: 50px;
+    border: 1px solid transparent;
+    background-color: var(--yellow);
+    cursor: pointer;
+    color: white;
+    transition: .3s ease-in-out;
+    z-index: 3;
+}
+
+.Invest-button:hover{
+    color: var(--yellow);
+    background-color: transparent;
+    border: 1px solid var(--yellow);
+}
+
+.Plans-details{
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
 }

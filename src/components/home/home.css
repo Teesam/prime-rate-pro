@@ -231,3 +231,596 @@
 #see-plans-button:hover{
     background-color: rgb(245, 181, 4);
 }
+
+.Home-footer{
+    width: 100%;
+    height: 4rem;
+    background-color: rgba(253, 223, 179, 0.993);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5rem;
+}
+
+.Home-footer > div{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.Footer-icon{
+    font-size: 1.5rem;
+    color: black;
+    margin-right: 1rem;
+    cursor: pointer;
+}
+
+.Footer-sub-item{
+    margin-right: 2rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 1370px){
+    .Home{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        overflow-x: hidden;
+        align-items: center;
+    }
+    
+    #home-header{
+        background-image: url('../asset//Background\ Pattern.jpg');
+        background-position: center;
+        background-size: cover;
+        width: 100%;
+        padding-top: 7rem;
+    }
+    
+    #header-statement{
+        color: var(--orange);
+        font-size: 2rem;
+        text-align: start;
+        line-height: 3.5rem;
+        margin: unset;
+    }
+    
+    #header-left{
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding-left: 7rem;
+    }
+    
+    #header-left > h3{
+        color: var(--grey);
+        margin-top: .5rem;
+    }
+    
+    #header-image{
+        border: 1px solid var(--yellow);
+        border-radius: 50%;
+        padding: 2rem;
+        cursor: pointer;
+        transition: .3s;
+        width: 70%;
+    }
+    
+    #header-image:hover{
+        padding: 3rem;
+    }
+    
+    #header-right{
+        width: 60%;
+    }
+    
+    #header-top{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100vw;
+    }
+    
+    #header-button{
+        margin-top: 3rem;
+    }
+    
+    #ball-image{
+      position: absolute;
+      top: 0rem;
+      right: 5rem;
+      width: 3rem;
+    }
+    
+    #money-image{
+      position: absolute;
+      left: 0rem;
+      bottom: 0rem;
+      width: 7rem;
+    }
+    
+    #header-image-holder{
+        width: 70%;
+        position: relative;
+        margin-left: 4rem;
+    }
+    
+    #header-bottom-left{
+        background-color: rgb(255, 136, 0);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        width: 35%;
+        padding: 0;
+    }
+    
+    #header-bottom-left > p{
+        text-align: start;
+    }
+    
+    #header-bottom{
+        width: 100vw;
+        display: flex;
+        margin-top: 5rem;
+        font-size: .8rem;
+    }
+    
+    #header-bottom-right{
+        background-color: orange;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        color: white;
+        width: 65%;
+        padding: 1rem 0;
+    }
+    
+    #header-bottom-right > div{
+        display: flex;
+        align-items: center;
+    }
+    
+    #header-bottom-right > div > h3{
+        color: black;
+    }
+    
+    .Icon-image{
+        width: 2rem;
+        margin-right: 2rem;
+    }
+    
+    #investment-journey{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 90%;
+        margin-top: 6rem;
+    }
+    
+    #journey-header{
+        color: var(--orange);
+    }
+    
+    #journey-content{
+        background-image: url('../asset/Background\ Pattern.jpg');
+        background-size: cover;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        padding: 3rem 1rem;
+    }
+    
+    #journey-content > div{
+        margin-bottom: 3rem;
+    }
+    
+    #journey-image{
+        width: 30%;
+    }
+    
+    .Journey-text{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: 1rem;
+        margin-left: 10rem;
+        width: 70%;
+    }
+    
+    .Journey-content-header-holder > h3{
+        font-weight: 500;
+        margin-bottom: .5rem;
+    }
+    
+    .Journey-text > p{
+        text-align: start;
+        color: var(--grey);
+    }
+    
+    .Journey-content-header-holder{
+        position: relative;
+    }
+    
+    .Step{
+        position: absolute;
+        left: -4rem;
+        top: 0;
+        color: var(--orange);
+    }
+    
+    /* .Step::after{
+        content: '';
+        color: var(--orange);
+        position: absolute;
+        bottom: 0;
+        right: 50%;
+        width: 1px;
+        height: 5rem;
+    } */
+    
+    #investment-action{
+        width: 90%;
+        background-image: linear-gradient(90deg, var(--orange), var(--orange), var(--yellow));
+        display: flex;
+        justify-content: space-between;
+        border-radius: 20px;
+        color: white;
+        padding: 2rem 5rem;
+        margin-bottom: 4rem;
+    }
+    
+    #investment-action > div{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    #investment-action > h2{
+        text-align: start;
+    }
+    
+    #see-plans-button{
+        padding: 1rem 3rem;
+        background-color: transparent;
+        border: 1px solid white;
+        border-radius: 50px;
+        transition: .2s ease-in-out;
+        cursor: pointer;
+        color: white;
+    }
+    
+    #see-plans-button:hover{
+        background-color: rgb(245, 181, 4);
+    }
+
+    .Home-footer{
+        width: 100%;
+        height: 4rem;
+        background-color: rgba(253, 223, 179, 0.993);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 5rem;
+        font-size: .8rem;
+    }
+    
+    .Home-footer > div{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    
+    .Footer-icon{
+        font-size: 1rem;
+        color: black;
+        margin-right: 1rem;
+        cursor: pointer;
+    }
+    
+    .Footer-sub-item{
+        margin-right: 2rem;
+    }
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 490px){
+
+    .Home{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        overflow-x: hidden;
+        align-items: center;
+    }
+    
+    #home-header{
+        background-image: url('../asset//Background\ Pattern.jpg');
+        background-position: center;
+        background-size: cover;
+        width: 100%;
+        padding-top: 7rem;
+    }
+    
+    #header-statement{
+        color: var(--orange);
+        font-size: 2rem;
+        text-align: start;
+        line-height: 3.5rem;
+        margin: unset;
+    }
+    
+    #header-left{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding-left: unset;
+        margin-top: 2rem;
+    }
+    
+    #header-left > h3{
+        color: var(--grey);
+        margin-top: .5rem;
+    }
+    
+    #header-image{
+        border: 1px solid var(--yellow);
+        border-radius: 50%;
+        padding: 2rem;
+        cursor: pointer;
+        transition: .3s;
+        width: 100%;
+    }
+    
+    #header-image:hover{
+        padding: 3rem;
+    }
+    
+    #header-right{
+        width: 100%;
+    }
+    
+    #header-top{
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: center;
+        width: 100vw;
+    }
+    
+    #header-button{
+        margin-top: 3rem;
+    }
+    
+    #ball-image{
+      position: absolute;
+      top: 0rem;
+      right: 1rem;
+      width: 3rem;
+    }
+    
+    #money-image{
+      position: absolute;
+      left: 0rem;
+      bottom: 0rem;
+      width: 5rem;
+    }
+    
+    #header-image-holder{
+        width: 70%;
+        position: relative;
+        margin-left: 4rem;
+    }
+    
+    #header-bottom-left{
+        background-color: rgb(255, 136, 0);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        width: 35%;
+        padding: 0;
+    }
+    
+    #header-bottom-left > p{
+        text-align: start;
+    }
+    
+    #header-bottom{
+        width: 100vw;
+        display: flex;
+        margin-top: 5rem;
+        font-size: .8rem;
+    }
+    
+    #header-bottom-right{
+        background-color: orange;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        color: white;
+        width: 65%;
+        padding: 1rem 0;
+    }
+    
+    #header-bottom-right > div{
+        display: flex;
+        align-items: center;
+    }
+    
+    #header-bottom-right > div > h3{
+        color: black;
+    }
+    
+    .Icon-image{
+        width: 2rem;
+        margin-right: 2rem;
+    }
+    
+    #investment-journey{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 90%;
+        margin-top: 6rem;
+    }
+    
+    #journey-header{
+        color: var(--orange);
+    }
+    
+    #journey-content{
+        background-image: url('../asset/Background\ Pattern.jpg');
+        background-size: cover;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        padding: 3rem 1rem;
+    }
+    
+    #journey-content > div{
+        margin-bottom: 3rem;
+    }
+    
+    #journey-image{
+        width: 30%;
+        display: none;
+    }
+    
+    .Journey-text{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: 1rem;
+        margin-left: 2rem;
+        width: 90%;
+    }
+    
+    .Journey-content-header-holder > h3{
+        font-weight: 500;
+        margin-bottom: .5rem;
+    }
+    
+    .Journey-text > p{
+        text-align: start;
+        color: var(--grey);
+    }
+    
+    .Journey-content-header-holder{
+        position: relative;
+    }
+    
+    .Step{
+        position: absolute;
+        left: -3rem;
+        top: 0;
+        color: var(--orange);
+    }
+    
+    
+    #investment-action{
+        width: 90%;
+        background-image: linear-gradient(90deg, var(--orange), var(--orange), var(--yellow));
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 20px;
+        color: white;
+        padding: 2rem 5rem;
+        margin-bottom: 4rem;
+    }
+    
+    #investment-action > div{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    #investment-action > h2{
+        text-align: start;
+    }
+    
+    #see-plans-button{
+        padding: 1rem 3rem;
+        background-color: transparent;
+        border: 1px solid white;
+        border-radius: 50px;
+        transition: .2s ease-in-out;
+        cursor: pointer;
+        color: white;
+        margin-top: 1rem;
+    }
+    
+    #see-plans-button:hover{
+        background-color: rgb(245, 181, 4);
+    }
+
+    .Home-footer{
+        width: 100%;
+        height: auto;
+        background-color: rgba(253, 223, 179, 0.993);
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: space-between;
+        align-items: center;
+        padding: 2rem 1rem;
+        font-size: .8rem;
+    }
+    
+    .Home-footer > div{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
+    
+    .Footer-icon{
+        font-size: 1rem;
+        color: black;
+        margin-right: 1rem;
+        cursor: pointer;
+    }
+    
+    .Footer-sub-item{
+        margin-bottom: 1rem;
+    }
+    
+    #socials-holder{
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 2rem;
+    }
+
+
+}

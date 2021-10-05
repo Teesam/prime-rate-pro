@@ -7,6 +7,7 @@ import Modal from '../modal/modal';
 import CloseAlert from '../asset/close alert.png';
 import { SET_TOKEN, SET_USER } from '../../redux/constants/constants';
 import { connect } from 'react-redux';
+import Nav from '../nav/nav';
 
 
 const Login = ({ dispatch }) => {
@@ -25,10 +26,18 @@ const Login = ({ dispatch }) => {
             const response = await auth.login(loginObject);
             console.log(response)
             const token = response.data.auth.token;
-            if(response.data.role == 'super_admin'){
+            if(response.data.role == 'super_admin' && response.data.status == 'verified'){
                 dispatch({ type: SET_TOKEN, payload: token });
                 dispatch({ type: SET_USER, payload: response.data})
                 history.push('/admin');
+                setLoading(false);
+                API.http.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+            }
+
+            if(response.data.status == 'verified' && !response.data.role){
+                dispatch({ type: SET_TOKEN, payload: token });
+                dispatch({ type: SET_USER, payload: response.data})
+                history.push('/dashboard');
                 setLoading(false);
                 API.http.defaults.headers.common['Authorization'] = `Bearer ${token}`;
             }
@@ -47,7 +56,8 @@ const Login = ({ dispatch }) => {
     return(
         <div className = 'Register'>
             <div id = 'logo-holder'>
-                <h2 onClick = { () => history.push('/')} id = 'logo'>Logo</h2>
+                {/* <h2 onClick = { () => history.push('/')} id = 'logo'>Logo</h2> */}
+                <Nav />
             </div>
             <div id = 'form-holder'>
                 <h2>Login</h2>

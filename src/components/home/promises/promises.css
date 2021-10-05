@@ -76,3 +76,224 @@
     text-align: start;
     color: rgb(173, 169, 169);
 }
+
+#mobile-second-image-holder{
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 1370px){
+    .Promises{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 90%;
+    }
+    
+    .Promises > div{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 5rem;
+    }
+    
+    .Promises > div > div{
+        width: 45%;
+    }
+    
+    .Promises-image-holder-first{
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+    }
+    
+    .Promises-image-holder-second{
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+    }
+    
+    .Promises-image{
+        width: 100%;
+        cursor: pointer;
+        transition: .4s ease-in-out;
+    }
+    
+    .Promises-image:hover{
+        width: 92%;
+    }
+    
+    .Promises-first{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        width: 100%;
+    }
+    
+    .Promises-first-word{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        width: 80%;
+        padding-right: 2rem;
+    }
+    
+    .Promises-first-word > h2,
+    .Promises-second-word > h2{
+        font-weight: 500;
+    }
+    
+    .Promises-first-word > p{
+        text-align: end;
+        color: rgb(173, 169, 169);
+    }
+    
+    .Promises-second-word{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 80%;
+        padding-left: 2rem;
+    }
+    
+    .Promises-second-word > p{
+        text-align: start;
+        color: rgb(173, 169, 169);
+    }
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 490px){
+    .Promises{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 90%;
+    }
+    
+    .Promises > div{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 5rem;
+    }
+    
+    .Promises > div > div{
+        width: 100%;
+    }
+    
+    .Promises-image-holder-first{
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+    }
+    
+    .Promises-image-holder-second{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .Promises-image{
+        width: 100%;
+        cursor: pointer;
+        transition: .4s ease-in-out;
+    }
+    
+    .Promises-image:hover{
+        width: 92%;
+    }
+    
+    .Promises-first{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+    }
+    
+    .Promises-first-word{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 70%;
+        padding-right: unset;
+    }
+    
+    .Promises-first-word > h2,
+    .Promises-second-word > h2{
+        font-weight: 500;
+    }
+    
+    .Promises-first-word > p{
+        text-align: center;
+        color: rgb(173, 169, 169);
+    }
+    
+    .Promises-second-word{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 70%;
+        padding-left: unset;
+    }
+    
+    .Promises-second-word > p{
+        text-align: center;
+        color: rgb(173, 169, 169);
+    }
+    
+    .First{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 5rem;
+        display: none;
+    }
+
+    .Second{
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 5rem;
+        display: none;
+    }
+
+    #mobile-second-image-holder{
+        display: block;
+    }
+
+    .Promises-second{
+        display: none;
+    }
+
+}
