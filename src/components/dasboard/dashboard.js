@@ -4,8 +4,11 @@ import './dashboard.css';
 import Footer from '../footer/footer';
 import { useState } from 'react';
 import InvestmentPlans from '../investment-plans/investment-plans';
+import { useHistory } from 'react-router';
+const Dashboard = ({ token }) => {
 
-const Dashboard = () => {
+
+    const history = useHistory();
 
     const [ makeInvestment, setMakeInvestment ] = useState(false);
 
@@ -22,7 +25,7 @@ const Dashboard = () => {
                 <DashboardInfo>
                     <div 
                         onClick = { () => {
-                            setMakeInvestment(true);
+                            history.push('/dashboard/investmentplans')
                         }}
                         id = 'make-investment'
                     >
@@ -49,5 +52,6 @@ const Dashboard = () => {
         </div>
     )
 }
+
 
 export default Dashboard;

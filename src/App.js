@@ -13,8 +13,25 @@ import AdminInvestors from './components/admin/investors/investors';
 import { store, persistor } from './redux/store';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
+import InvestmentPlans from './components/investment-plans/investment-plans';
+import { useEffect, useMemo } from 'react';
+import API from './api';
+
+ 
 
 const App = () => {
+  // const token = useMemo(() => {
+  //   const { auth: { token } } = store.getState();
+  //   return token;
+  // }) 
+
+  // useEffect( () => {
+  //   API.http.defaults.commons['Authorization'] = token;
+  // }, [token]);
+
+
+
+
   return (
     <Provider store = { store }>
       <BrowserRouter>
@@ -42,6 +59,8 @@ const App = () => {
               <Route path = '/admin/profile' strict exact component = { AdminProfile } />
 
               <Route path = '/admin/investors' strict exact component = { AdminInvestors } />
+
+              <Route path = '/dashboard/investmentplans' strict exact component = { InvestmentPlans } />
 
             </Switch>
 

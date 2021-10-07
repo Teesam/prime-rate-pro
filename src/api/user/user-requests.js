@@ -10,8 +10,8 @@ export default class UserRequests {
         return this.#httpClient.get('/investment-plans');
     }
 
-    async invest(id) {
-        return this.#httpClient.post(`/investment-plans/${id}/invest`);
+    async invest(id, payload) {
+        return this.#httpClient.post(`/investment-plans/${id}/invest`, payload);
     }
   
 }
