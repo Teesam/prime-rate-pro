@@ -67,7 +67,7 @@
     border-bottom-right-radius: 5px;
 }
 
-#dashboard-logout{
+#dashboard-bottom-logout{
     display: flex;
     align-items: center;
     width: 80%;
@@ -82,6 +82,10 @@
 #logout-icon{
     margin-right: 1rem;
     transform: rotate(90deg);
+}
+
+#dashboard-top-logout{
+    display: none;
 }
 
 
@@ -186,7 +190,139 @@
         transform: rotate(90deg);
     }
     
+}
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 490px){
+
+
+    .Dashboard-nav{
+        width: unset;
+        background-color: rgb(253, 247, 235);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: unset;
+        height: 7.5rem;
+    }
+
+    #dashboard-logo{
+        font-size: 1rem;
+        margin-left: 1rem;
+    }
+    
+    .Dashboard-nav > div{
+        width: 100%;
+        padding-top: 2rem;
+    }
+    
+    #dashboard-ul{
+        display: flex;
+        flex-direction: unset;
+        align-items: flex-start;
+        justify-content: space-evenly;
+        width: 100%;
+        margin-top: unset;
+    }
+    
+    .Dash-nav-button{
+        background-color: transparent;
+        color: var(--grey);
+        border: none;
+        font-weight: 600;
+        margin-left: unset;
+        cursor: pointer;
+    }
+    
+    #dashboard-ul > li{
+        list-style-type: none;
+        width: 33%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        color: var(--grey);
+        position: relative;
+        padding: 1rem;
+        cursor: pointer;
+        padding-left: unset;
+    }
+    
+    #dash-active{
+        background-color: white;
+    }
+    
+    #dash-active-icon,
+    #dash-active-button{
+        color: var(--orange);
+    }
+    
+    #dash-active:before{
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: unset;
+        bottom: 0;
+        width: unset;
+        height: 5px;
+        background-color: var(--yellow);
+        border-top-right-radius: 5px;
+        border-top-left-radius: 5px;
+    }
+
+    #dashboard-top-logout{
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        background-color: transparent;
+        border: none;
+        font-weight: 600;
+        margin-right: 1rem;
+    }
+    
+    #dashboard-bottom-logout{
+        display: none;
+        align-items: center;
+        width: 80%;
+        margin-left: 20%;
+        margin-bottom: 7rem;
+        cursor: pointer;
+        background-color: transparent;
+        border: none;
+        font-weight: 600;
+    }
+    
+    #logout-icon{
+        margin-right: .5rem;
+        transform: rotate(90deg);
+    }
+    
+    #dashboard-top-holder{
+        display: flex;
+        justify-content: space-between;
+        width: 100vw;
+        margin-bottom: 1rem;
+    }
 
 
 }

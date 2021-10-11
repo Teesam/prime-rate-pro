@@ -4,18 +4,25 @@ import './profile.css';
 import Footer from '../../footer/footer';
 import { useState } from 'react';
 import InvestmentPlans from '../../investment-plans/investment-plans';
+import MobileDashboardInfo from '../dashboard-info/mobile-dashboard-inof';
+import { useHistory } from 'react-router';
 
 const Profile = () => {
     
     const [ makeInvestment, setMakeInvestment ] = useState(false);
+    const [ showMenu, setShowMenu ] = useState(false);
+
+    const history = useHistory();
 
     return(
         <div className = 'Create-investment'>
             <div>
 
-                <DashboardNavProfile />
+                <DashboardNavProfile
+                    onClick = { () => setShowMenu(false)}
+                />
 
-                <div id = 'profile-content'>
+                <div onClick = { () => setShowMenu(false)} id = 'profile-content'>
                     <h3 id = 'profile-title'>Profile Setting</h3>
                     <form>
                         <div className = 'Input-holder'>
@@ -37,6 +44,32 @@ const Profile = () => {
                     </form>
                     <button id = 'register-button'>Save</button>
                 </div>
+
+                <div
+                    id = 'navigate-dash-info' 
+                    onClick = { () => setShowMenu(!showMenu) }
+                    className = { showMenu == true ? 'Move-left' : '' }
+                >
+                    <i id = 'info-navigate-icon' className = { showMenu === false ? 'fas fa-chevron-left' : 'fas fa-chevron-right'}></i>
+                </div>
+
+                {
+                    showMenu == true ?
+
+                    <MobileDashboardInfo>
+                        <div 
+                            onClick = { () => {
+                                history.push('/dashboard/investmentplans')
+                            }}
+                            id = 'make-investment'
+                        >
+                            <i id = 'invest-icon' className = 'fas fa-hand-holding-usd'></i>
+                            <p>Make new investment</p>
+                        </div>
+                    </MobileDashboardInfo>
+
+                    : ''
+                }
 
                 <DashboardInfo>
                     <div 

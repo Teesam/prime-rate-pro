@@ -153,14 +153,15 @@ const Register = () => {
                 <Modal onClick = { () => {
                     setSuccessfulModalSwitch(false);
                 }}>
-                    <p id = 'modal-successful-text'>Account created, please verify account on your email.</p>
+                    <h2 id = 'modal-successful-text'>Account created. <br /> Verify Email</h2>
+                    <p>An email has been sent to your mailbox.<br /> Kindly click the verification link in your mail to continue.</p>
                     <button 
                         id = 'register-modal-button'
                         onClick = { () => {
                             history.push('/');
                         }} 
                     >
-                        Close
+                        Proceed
                     </button>
                 </Modal>
                 : ''

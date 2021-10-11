@@ -14,22 +14,13 @@ import { store, persistor } from './redux/store';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 import InvestmentPlans from './components/investment-plans/investment-plans';
-import { useEffect, useMemo } from 'react';
-import API from './api';
-
+import ConfirmEmail from './components/confirm-email/confirm-email';
+import RegisteredUserRoutes from './components/protected-routes/registered-user-route';
+import AdminRoutes from './components/protected-routes/admin-routes';
+import FailedVerification from './components/confirm-email/failed-verification';
  
 
 const App = () => {
-  // const token = useMemo(() => {
-  //   const { auth: { token } } = store.getState();
-  //   return token;
-  // }) 
-
-  // useEffect( () => {
-  //   API.http.defaults.commons['Authorization'] = token;
-  // }, [token]);
-
-
 
 
   return (
@@ -46,21 +37,25 @@ const App = () => {
 
               <Route path = '/login' strict exact component = { Login } />
 
-              <Route path = '/dashboard' strict exact component = { Dashboard } />
+              <RegisteredUserRoutes path = '/dashboard' strict exact component = { Dashboard } />
 
-              <Route path = '/dashboard/transaction' strict exact component = { Transaction } />
+              <RegisteredUserRoutes path = '/dashboard/transaction' strict exact component = { Transaction } />
 
-              <Route path = '/dashboard/profile' strict exact component = { Profile } />
+              <RegisteredUserRoutes path = '/dashboard/profile' strict exact component = { Profile } />
 
-              <Route path = '/admin' strict exact component = { Admin } />
+              <RegisteredUserRoutes path = '/dashboard/investmentplans' strict exact component = { InvestmentPlans } />
 
-              <Route path = '/admin/createinvestment' strict exact component = { AdminCreateInvestment } />
+              <AdminRoutes path = '/admin' strict exact component = { Admin } />
 
-              <Route path = '/admin/profile' strict exact component = { AdminProfile } />
+              <AdminRoutes path = '/admin/createinvestment' strict exact component = { AdminCreateInvestment } />
 
-              <Route path = '/admin/investors' strict exact component = { AdminInvestors } />
+              <AdminRoutes path = '/admin/profile' strict exact component = { AdminProfile } />
 
-              <Route path = '/dashboard/investmentplans' strict exact component = { InvestmentPlans } />
+              <AdminRoutes path = '/admin/investors' strict exact component = { AdminInvestors } />
+
+              <Route path = '/confirmemail' strict exact component = { ConfirmEmail } />
+
+              <Route path = '/failedverification' strict exact component = { FailedVerification } />
 
             </Switch>
 

@@ -2,3 +2,17 @@
     position: relative;
     padding-left: 15%;
 }
+
+
+
+
+
+
+@media only screen and (max-width: 490px){
+
+    .Create-investment{
+        position: relative;
+        padding-left: unset;
+    }
+
+}

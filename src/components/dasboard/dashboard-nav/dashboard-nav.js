@@ -1,14 +1,28 @@
+import { connect } from 'react-redux';
 import { useHistory } from 'react-router';
 import './dashboard-nav.css';
 
-const DashboardNav = () => {
+const DashboardNav = ({ dispatch, onClick }) => {
 
     const history = useHistory();
 
     return(
-        <div className = 'Dashboard-nav'>
+        <div onClick = { onClick } className = 'Dashboard-nav'>
             <div>
-                <h2>LOGO</h2>
+                <div id = 'dashboard-top-holder'>
+                    <h2 id = 'dashboard-logo'>LOGO</h2>
+                    <button 
+                        onClick = { () =>{ 
+                            history.push('/');
+                            localStorage.removeItem('token');
+                            dispatch({ type: 'LOGOUT' })
+                        }} 
+                        id = 'dashboard-top-logout'
+                    >
+                        <i id = 'logout-icon' className = 'fas fa-power-off'></i>
+                        Logout
+                    </button>
+                </div>
                 <ul id = 'dashboard-ul'>
                     <li onClick = { () => history.push('/dashboard')} id = 'dash-active'>
                         <i  id = 'dash-active-icon' className = 'fas fa-columns'></i>
@@ -24,7 +38,11 @@ const DashboardNav = () => {
                     </li>
                 </ul>
             </div>
-            <button onClick = { () => history.push('/')} id = 'dashboard-logout'>
+            <button onClick = { () =>{ 
+                history.push('/');
+                localStorage.removeItem('token');
+                dispatch({ type: 'LOGOUT' })
+            }} id = 'dashboard-bottom-logout'>
                 <i id = 'logout-icon' className = 'fas fa-power-off'></i>
                 <p>Logout</p>
             </button>
@@ -32,4 +50,8 @@ const DashboardNav = () => {
     )
 }
 
-export default DashboardNav;
+const mapStateToProps = (state) => {
+    console.log(state)
+}
+
+export default connect(mapStateToProps)(DashboardNav);

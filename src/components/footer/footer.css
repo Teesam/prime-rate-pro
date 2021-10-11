@@ -28,3 +28,109 @@
 .Footer-sub-item{
     margin-right: 2rem;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 1370px){
+
+    .Footer{
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        height: 4rem;
+        background-color: rgba(253, 223, 179, 0.993);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 2rem;
+        z-index: 100;
+    }
+    
+    .Footer > div{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    
+    .Footer-icon{
+        font-size: 1rem;
+        color: black;
+        margin-right: 1rem;
+        cursor: pointer;
+    }
+    
+    .Footer-sub-item{
+        margin-right: 2rem;
+        font-size: .8rem;
+    }
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 490px){
+
+    .Footer{
+        width: 100%;
+        height: auto;
+        background-color: rgba(253, 223, 179, 0.993);
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: space-between;
+        align-items: center;
+        padding: 2rem 1rem;
+        font-size: .8rem;
+        position: absolute;
+        bottom: -5rem;
+        right: 0;
+        left: 0;
+        margin-top: 10rem;
+    }
+    
+    .Footer > div{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
+    
+    .Footer-icon{
+        font-size: 1rem;
+        color: black;
+        margin-right: 1rem;
+        cursor: pointer;
+    }
+    
+    .Footer-sub-item{
+        margin-bottom: 1rem;
+    }
+    
+    #socials-holder{
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 2rem;
+    }
+
+
+}

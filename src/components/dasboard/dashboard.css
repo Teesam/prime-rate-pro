@@ -31,5 +31,173 @@
     color: white;
 }
 
+#svg-holder{
+    transform: rotate(-90deg);
+}
+
+#dashboard-content{
+    width: 76.5%;
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 2rem;
+    padding-top: 3rem;
+    overflow-y: scroll;
+}
+
+#navigate-dash-info{
+    display: none;
+}
 
 
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 1370px){
+    .Dashboard{
+        /* padding-left: 15%; */
+        position: relative;
+    }
+    
+    .Dashboard > div{
+        display: flex;
+        position: relative;
+    }
+    
+    #make-investment{
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        background-color: white;
+        padding: 1rem;
+        box-shadow: 0px 5px 15px 0px rgb(196, 193, 193);
+        width: 80%;
+        border-radius: 5px;
+        margin-top: 5rem;
+        color: var(--orange);
+        cursor: pointer;
+        font-size: .8rem;
+    }
+    
+    #invest-icon{
+        margin-right: 1rem;
+        padding: .5rem;
+        border-radius: 3px;
+        background-color: var(--yellow);
+        color: white;
+    }
+    
+    #svg-holder{
+        transform: rotate(-90deg);
+    }
+    
+    #dashboard-content{
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding-left: 12%;
+        padding-top: 3rem;
+    }
+    
+    #navigate-dash-info{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 1rem;
+        border-bottom-left-radius: 10px;
+        border-top-left-radius: 10px;
+        background-color: var(--orange);
+        position: absolute;
+        top: 1rem;
+        right: 0;
+    }
+
+    #info-navigate-icon{
+        color: white;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 490px){
+    .Dashboard{
+        /* padding-left: 15%; */
+        position: relative;
+    }
+    
+    .Dashboard > div{
+        display: flex;
+        position: relative;
+    }
+    
+    #make-investment{
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        background-color: white;
+        padding: 1rem;
+        box-shadow: 0px 5px 15px 0px rgb(196, 193, 193);
+        width: 80%;
+        border-radius: 5px;
+        margin-top: 5rem;
+        color: var(--orange);
+        cursor: pointer;
+        font-size: .8rem;
+    }
+    
+    #invest-icon{
+        margin-right: 1rem;
+        padding: .5rem;
+        border-radius: 3px;
+        background-color: var(--yellow);
+        color: white;
+    }
+    
+    #svg-holder{
+        transform: rotate(-90deg);
+    }
+    
+    #dashboard-content{
+        width: 76.5%;
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        padding-left: 2rem;
+        padding-top: 3rem;
+    }
+    
+    #navigate-dash-info{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 1rem;
+        border-bottom-left-radius: 10px;
+        border-top-left-radius: 10px;
+        background-color: var(--orange);
+        position: fixed;
+        top: 8rem;
+        right: 0;
+    }
+
+}

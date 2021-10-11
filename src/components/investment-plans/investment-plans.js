@@ -6,13 +6,14 @@ import Footer from '../footer/footer';
 import { useState, useEffect } from 'react';
 import { apiErrorHandler, userRequest } from '../../api';
 import Loading from '../loading/loading';
-import { useHistory } from 'react-router';
+import { Redirect, useHistory } from 'react-router';
+import { connect } from 'react-redux';
 
 const InvestmentPlans = () => {
 
     const history = useHistory();
 
-    const [ makeInvestment, setMakeInvestment ] = useState(false);    
+    const [ goToPay, setGoTOPay ] = useState(false);
     const [ plans, setPlans ] = useState([]);
     const [ loading, setLoading ] = useState(false);
 
@@ -25,6 +26,7 @@ const InvestmentPlans = () => {
                 setLoading(true);
             }catch(error){
                 const { message } = apiErrorHandler(error);
+                console.log(message);
             }
         }
 
@@ -36,9 +38,13 @@ const InvestmentPlans = () => {
     const investHandler = async (id, payload) => {
         try{
             const response = await userRequest.invest(id, payload);
-            console.log(response);
+            const route = response.data.instrument.action;
+            let url = '';
+            window.location.replace(route);
+            
         }catch(error){
             const { message } = apiErrorHandler(error);
+            console.log(message);
         }
     }
 
@@ -63,12 +69,11 @@ const InvestmentPlans = () => {
                                                 <p className = 'Plan-name'>{ plan.name }</p>
                                                 <p className = 'Plan-price'>{ `${'N' + plan.price}` }</p>
                                                 <p className = 'Plan-interest-rate'>{ `${plan.interestRate + '%'}` }</p>
-                                                <p className = 'Plan-tenure'>{ `${'Tenure of' + ' ' + plan.tenor + ' ' + 'days'}` }</p>
+                                                <p className = 'Plan-tenure'>{ `${'Tenor of' + ' ' + plan.tenor + ' ' + 'days'}` }</p>
                                             </div>
                                             <button
                                                 onClick = { () => {
-                                                    console.log(plan.id)
-                                                    investHandler(plan.id, { slot: 1})
+                                                    investHandler(plan.id, { slots: 1, description: 'Test description'})
                                                 }}
                                                 className = 'Invest-button'
                                             >
@@ -97,6 +102,14 @@ const InvestmentPlans = () => {
 
             <Footer />
 
+            {
+                goToPay == true ?
+
+                <Redirect to = '' />
+
+                : ''
+            }
+
             
             {
                 !loading ?
@@ -110,4 +123,9 @@ const InvestmentPlans = () => {
     )
 }
 
-export default InvestmentPlans;
+
+const mapStateToProps = (state) => {
+    console.log(state)
+}
+
+export default connect(mapStateToProps)(InvestmentPlans);

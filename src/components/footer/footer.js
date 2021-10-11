@@ -12,7 +12,7 @@ const Footer = () => {
                 <p className = 'Footer-sub-item'>FAQs</p>
                 <p className = 'Footer-sub-item'>Testimonials</p>
             </div>
-            <div>
+            <div id = 'socials-holder'>
                 <i className = 'fab fa-facebook-f Footer-icon'></i>
                 <i className = 'fab fa-instagram Footer-icon'></i>
                 <i className = 'fab fa-twitter Footer-icon'></i>

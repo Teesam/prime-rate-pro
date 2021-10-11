@@ -1,14 +1,28 @@
 import { useHistory } from 'react-router';
 import './dashboard-nav.css';
+import { connect } from 'react-redux';
 
-const DashboardNavProfile = () => {
+const DashboardNavProfile = ({ onClick, dispatch }) => {
 
     const history = useHistory();
 
     return(
-        <div className = 'Dashboard-nav'>
+        <div onClick = { onClick } className = 'Dashboard-nav'>
             <div>
-                <h2>LOGO</h2>
+                <div id = 'dashboard-top-holder'>
+                    <h2 id = 'dashboard-logo'>LOGO</h2>
+                    <button 
+                        onClick = { () =>{ 
+                            history.push('/');
+                            localStorage.removeItem('token');
+                            dispatch({ type: 'LOGOUT' })
+                        }} 
+                        id = 'dashboard-top-logout'
+                    >
+                        <i id = 'logout-icon' className = 'fas fa-power-off'></i>
+                        Logout
+                    </button>
+                </div>
                 <ul id = 'dashboard-ul'>
                     <li onClick = { () => history.push('/dashboard')}>
                         <i className = 'fas fa-columns'></i>
@@ -24,7 +38,14 @@ const DashboardNavProfile = () => {
                     </li>
                 </ul>
             </div>
-            <button onClick = { () => history.push('/') } id = 'dashboard-logout'>
+            <button 
+                onClick = { () =>{ 
+                history.push('/');
+                localStorage.removeItem('token');
+                dispatch({ type: 'LOGOUT' })
+                }} 
+                id = 'dashboard-bottom-logout'
+            >
                 <i id = 'logout-icon' className = 'fas fa-power-off'></i>
                 <p>Logout</p>
             </button>
@@ -32,4 +53,10 @@ const DashboardNavProfile = () => {
     )
 }
 
-export default DashboardNavProfile;
+const mapStateToProps = ( state ) => {
+    return{
+        state
+    }
+}
+
+export default connect(mapStateToProps)(DashboardNavProfile);

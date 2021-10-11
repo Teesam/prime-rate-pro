@@ -101,9 +101,22 @@ export class HttpClient {
     this.client.defaults.headers.post['Content-Type'] = 'application/json';
     this.client.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
     this.client.defaults.headers.common['API-KEY'] = '58b8f8ae-e67c-4a45-b85c-c22d2ed126dd';
+    delete this.client.defaults.headers.common['Authorization'];
 
     // set headers for device info
+    
+  this.client.interceptors.request.use(async (config) => {
+    const token = localStorage.getItem('token');
+    if(token){
+      this.client.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+      }
+      return config;
+  });
 
+  
+
+    
+    
 
     // setup interceptors
     this.client.interceptors.response.use(

@@ -1,16 +1,16 @@
 import './login.css';
 import { useHistory } from 'react-router';
 import { useState } from 'react';
-import API, { apiErrorHandler, auth } from '../../api';
+import { apiErrorHandler, auth } from '../../api';
 import Loading from '../loading/loading';
 import Modal from '../modal/modal';
 import CloseAlert from '../asset/close alert.png';
-import { SET_TOKEN, SET_USER } from '../../redux/constants/constants';
 import { connect } from 'react-redux';
 import Nav from '../nav/nav';
+import { setUser, setToken } from '../../redux/auth/actions';
 
 
-const Login = ({ dispatch }) => {
+const Login = ({ dispatch, setUser, setToken }) => {
 
     
     const [ loading, setLoading ] = useState(false);
@@ -22,32 +22,41 @@ const Login = ({ dispatch }) => {
     })
 
     const loginHandler = async () => {
+
         try{
             const response = await auth.login(loginObject);
-            console.log(response)
+            console.log(response);
             const token = response.data.auth.token;
+            localStorage.setItem('status', `${ response.data.status }`)
+            dispatch({ type: 'SET_TOKEN', payload: token });
+            dispatch({ type: 'SET_USER', payload: response.data});
             if(response.data.role == 'super_admin' && response.data.status == 'verified'){
-                dispatch({ type: SET_TOKEN, payload: token });
-                dispatch({ type: SET_USER, payload: response.data})
                 history.push('/admin');
-                setLoading(false);
-                API.http.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+                localStorage.setItem('role', `${ response.data.role }`)
+                localStorage.setItem(`token, '${token}'`)
             }
 
-            if(response.data.status == 'verified' && !response.data.role){
-                dispatch({ type: SET_TOKEN, payload: token });
-                dispatch({ type: SET_USER, payload: response.data})
+            if(response.data.status.toLowerCase().includes('verified')){
                 history.push('/dashboard');
-                setLoading(false);
-                API.http.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+                localStorage.setItem('token', `${token}`)
             }
         }catch(error){
             const { message } = apiErrorHandler(error);
-            setLoading(false);
             setUnsuccessfulModalSwitch(true);
             setLoginObject({
                 ...setLoginObject, email: '', password: ''
             })
+        }finally{
+            setLoading(false);
+        }
+    }
+
+    const clearLocalStorage = async () => {
+        try{
+            const response = await localStorage.clear();
+            loginHandler()
+        }catch(error){
+            const { message } = apiErrorHandler(error);
         }
     }
 
@@ -94,9 +103,8 @@ const Login = ({ dispatch }) => {
                     
                     <button 
                         onClick = { () => {
-                            loginHandler();
+                            clearLocalStorage();
                             setLoading(true);
-                            // console.log(loginObject);
                         }} 
                         id = 'register-button'
                     >
@@ -137,7 +145,7 @@ const Login = ({ dispatch }) => {
 
 const mapStateToProps = ( state ) => {
     return{
-
+       state: state
     }
 }
 
