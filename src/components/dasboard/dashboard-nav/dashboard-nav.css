@@ -84,12 +84,22 @@
     transform: rotate(90deg);
 }
 
+
+
 #dashboard-top-logout{
     display: none;
 }
 
+#dashboard-top-holder{
+    display: flex;
+    justify-content: flex-start;
+    width: 100vw;
+    margin-bottom: 1rem;
+}
 
-
+.Dashboard-logo{
+    width: 4rem;
+}
 
 
 
@@ -223,7 +233,7 @@
         right: 0;
         top: 0;
         bottom: unset;
-        height: 7.5rem;
+        height: 8.5rem;
     }
 
     #dashboard-logo{
@@ -233,7 +243,7 @@
     
     .Dashboard-nav > div{
         width: 100%;
-        padding-top: 2rem;
+        padding-top: 1rem;
     }
     
     #dashboard-ul{
@@ -324,5 +334,9 @@
         margin-bottom: 1rem;
     }
 
-
+    .Dashboard-logo{
+        width: 4rem;
+        margin-left: 1rem;
+    }
+    
 }

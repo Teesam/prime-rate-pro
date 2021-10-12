@@ -1,4 +1,6 @@
 import './confirm-email.css';
+import Logo from '../asset/logo.png';
+import Nav from '../nav/nav';
 
 
 const ConfirmEmail = () => {
@@ -6,9 +8,10 @@ const ConfirmEmail = () => {
 
     return(
         <div className = 'Confirm-email'>
-            <div id = 'confirm-email-logo-holder'>
-                <h1 id = 'confirm-email-logo'>LOGO</h1>
-            </div>
+            {/* <div id = 'confirm-email-logo-holder'>
+                <img className = 'Logo' src = { Logo } alt = 'the logo' />
+            </div> */}
+            <Nav />
 
             <div id = 'confirm-email-holder'>
                 <i id = 'check-icon' className = 'fas fa-check-circle'></i>

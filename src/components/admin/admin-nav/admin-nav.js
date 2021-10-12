@@ -1,7 +1,7 @@
 import { useHistory } from 'react-router';
-import { LOGOUT } from '../../../redux/constants/constants';
 import './admin-nav.css';
 import { connect } from 'react-redux';
+import Logo from '../../asset/logo.png';
 
 const AdminNav = ({ dispatch }) => {
 
@@ -10,7 +10,7 @@ const AdminNav = ({ dispatch }) => {
     return(
         <div className = 'Dashboard-nav'>
             <div>
-                <h2>LOGO</h2>
+                <img className = 'Logo' src = { Logo } alt = 'the logo' />
                 <ul id = 'dashboard-ul'>
                     <li onClick = { () => history.push('/admin')} id = 'dash-active'>
                         <i id = 'dash-active-icon' className = 'fas fa-columns'></i>
@@ -32,7 +32,7 @@ const AdminNav = ({ dispatch }) => {
             </div>
             <button 
                 onClick = { () => {
-                    dispatch({ type: LOGOUT })
+                    dispatch({ type: 'LOGOUT' })
                     history.push('/');
                 }}
                 id = 'dashboard-logout'

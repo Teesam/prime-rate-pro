@@ -1,5 +1,6 @@
 import { useHistory } from 'react-router';
 import './admin-nav.css';
+import Logo from '../../asset/logo.png';
 
 const AdminNavCreate = () => {
 
@@ -8,7 +9,7 @@ const AdminNavCreate = () => {
     return(
         <div className = 'Dashboard-nav'>
             <div>
-                <h2>LOGO</h2>
+                <img className = 'Logo' src = { Logo } alt = 'the logo' />
                 <ul id = 'dashboard-ul'>
                     <li onClick = { () => history.push('/admin')}>
                         <i className = 'fas fa-columns'></i>

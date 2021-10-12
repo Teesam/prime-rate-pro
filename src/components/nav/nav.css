@@ -64,6 +64,7 @@
 .Logo{
     margin-left: 5rem;
     color: var(--orange);
+    width: 4rem;
 }
 
 #hambugger{

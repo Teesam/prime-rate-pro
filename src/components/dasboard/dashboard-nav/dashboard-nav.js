@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import { useHistory } from 'react-router';
 import './dashboard-nav.css';
+import Logo from '../../asset/logo.png';
 
 const DashboardNav = ({ dispatch, onClick }) => {
 
@@ -10,7 +11,8 @@ const DashboardNav = ({ dispatch, onClick }) => {
         <div onClick = { onClick } className = 'Dashboard-nav'>
             <div>
                 <div id = 'dashboard-top-holder'>
-                    <h2 id = 'dashboard-logo'>LOGO</h2>
+                    <img className = 'Dashboard-logo' src = { Logo } alt = 'the logo' />
+                    {/* <h2>Logo</h2> */}
                     <button 
                         onClick = { () =>{ 
                             history.push('/');

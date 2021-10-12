@@ -11,8 +11,6 @@ import MobileDashboardInfo from './dashboard-info/mobile-dashboard-inof';
 
 const Dashboard = ({ token }) => {
 
-
-
     const history = useHistory();
 
     const [ makeInvestment, setMakeInvestment ] = useState(false);
@@ -59,7 +57,7 @@ const Dashboard = ({ token }) => {
 
 
                 <div
-                    style = { showMenu == true ? { marginRight: '30%' } : {} }
+                    className = { showMenu == true ? 'Move-left' : '' }
                     id = 'navigate-dash-info' 
                     onClick = { () => setShowMenu(!showMenu) }
                 >

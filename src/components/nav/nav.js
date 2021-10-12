@@ -2,6 +2,7 @@ import './nav.css';
 import { useHistory } from 'react-router';
 import { useState } from 'react';
 import MobileNav from '../mobile-nav/mobile-nav';
+import Logo from '../asset/logo.png';
 
 const Nav = () => {
 
@@ -10,8 +11,7 @@ const Nav = () => {
 
     return(
         <div className = 'Nav'>
-            {/* <img className = 'Logo' src = {  } alt = 'the logo' /> */}
-            <h2 className = 'Logo'>Logo</h2>
+            <img className = 'Logo' src = { Logo } alt = 'the logo' />
 
            
             <div id = 'nav-main'>

@@ -10,7 +10,7 @@ import Nav from '../nav/nav';
 import { setUser, setToken } from '../../redux/auth/actions';
 
 
-const Login = ({ dispatch, setUser, setToken }) => {
+const Login = ({ dispatch }) => {
 
     
     const [ loading, setLoading ] = useState(false);
@@ -31,7 +31,7 @@ const Login = ({ dispatch, setUser, setToken }) => {
             dispatch({ type: 'SET_TOKEN', payload: token });
             dispatch({ type: 'SET_USER', payload: response.data});
             if(response.data.role == 'super_admin' && response.data.status == 'verified'){
-                history.push('/admin');
+                history.push('/dashboard');
                 localStorage.setItem('role', `${ response.data.role }`)
                 localStorage.setItem(`token, '${token}'`)
             }
