@@ -1,7 +1,7 @@
 import DashboardInfo from './dashboard-info/dashboard-info';
 import DashboardNav from './dashboard-nav/dashboard-nav';
 import './dashboard.css';
-import Footer from '../footer/footer';
+import Logo from '../asset/logo.png';
 import { useState } from 'react';
 import InvestmentPlans from '../investment-plans/investment-plans';
 import { useHistory } from 'react-router';
@@ -9,7 +9,7 @@ import { connect } from 'react-redux';
 import MobileDashboardInfo from './dashboard-info/mobile-dashboard-inof';
 
 
-const Dashboard = ({ token }) => {
+const Dashboard = ({ token, dispatch }) => {
 
     const history = useHistory();
 
@@ -24,6 +24,7 @@ const Dashboard = ({ token }) => {
     return(
         <div className = 'Create-investment'>
             <div>
+                <img className = 'Mobile-dashboard-logo' src = { Logo } alt = 'the logo' />
 
                 <DashboardNav 
                     onClick = { () => setShowMenu(false)}
@@ -77,6 +78,17 @@ const Dashboard = ({ token }) => {
                             <i id = 'invest-icon' className = 'fas fa-hand-holding-usd'></i>
                             <p>Make new investment</p>
                         </div>
+                        <button 
+                            onClick = { () =>{ 
+                                history.push('/');
+                                localStorage.removeItem('token');
+                                dispatch({ type: 'LOGOUT' })
+                            }} 
+                            id = 'dashboard-info-logout'
+                        >
+                            <i id = 'logout-icon' className = 'fas fa-power-off'></i>
+                            <p>Logout</p>
+                        </button>
                     </MobileDashboardInfo>
 
                     : ''
@@ -95,8 +107,6 @@ const Dashboard = ({ token }) => {
                 </DashboardInfo>
 
             </div>
-
-            <Footer />
 
             {
                 makeInvestment ?

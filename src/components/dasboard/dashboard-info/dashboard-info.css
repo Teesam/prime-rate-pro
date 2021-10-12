@@ -29,6 +29,9 @@
     display: none;
 }
 
+#dashboard-info-logout{
+    display: none;
+}
 
 
 
@@ -137,7 +140,7 @@
     .Mobile-dashboard-info{
         background-color: var(--light-grey);
         position: fixed;
-        top: 8.5rem;
+        top: 0;
         bottom: 0;
         right: 0;
         width: 50%;
@@ -156,9 +159,18 @@
             right: 0;
         }
     }
-
-
-
+    
+    #dashboard-info-logout{
+        align-items: center;
+        cursor: pointer;
+        background-color: transparent;
+        border: none;
+        font-weight: 600;
+        /* position: fixed;
+        bottom: 3rem;
+        right: 3rem; */
+        color: red;
+    }
 
 
 }

@@ -1,7 +1,7 @@
 import DashboardInfo from '../dashboard-info/dashboard-info';
 import DashboardNavTransaction from '../dashboard-nav/dashboard-nav-transaction';
 import './transaction.css';
-import Footer from '../../footer/footer';
+import Logo from '../../asset/logo.png';
 import { useState } from 'react';
 import InvestmentPlans from '../../investment-plans/investment-plans';
 import MobileDashboardInfo from '../dashboard-info/mobile-dashboard-inof';
@@ -17,6 +17,8 @@ const Transaction = () => {
     return(
         <div className = 'Transaction'>
             <div>
+                <img className = 'Mobile-dashboard-logo' src = { Logo } alt = 'the logo' />
+                
                 <DashboardNavTransaction />
 
                 <div
@@ -59,7 +61,7 @@ const Transaction = () => {
 
             </div>
 
-            <Footer />
+            {/* <Footer /> */}
 
             {
                 makeInvestment ?

@@ -4,7 +4,7 @@ const Footer = () => {
     return(
         <div className = 'Footer'>
             <div>
-                ©PrimeRate Pro 2021 
+                <p>©PrimeRate Pro 2021</p>
             </div>
             <div>
                 <p className = 'Footer-sub-item'>Terms and conditions</p>

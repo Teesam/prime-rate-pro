@@ -12,7 +12,6 @@ const DashboardNav = ({ dispatch, onClick }) => {
             <div>
                 <div id = 'dashboard-top-holder'>
                     <img className = 'Dashboard-logo' src = { Logo } alt = 'the logo' />
-                    {/* <h2>Logo</h2> */}
                     <button 
                         onClick = { () =>{ 
                             history.push('/');
