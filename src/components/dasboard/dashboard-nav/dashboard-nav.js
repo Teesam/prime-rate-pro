@@ -41,7 +41,7 @@ const DashboardNav = ({ dispatch, onClick }) => {
             </div>
             <button onClick = { () =>{ 
                 history.push('/');
-                localStorage.removeItem('token');
+                localStorage.clear()
                 dispatch({ type: 'LOGOUT' })
             }} id = 'dashboard-bottom-logout'>
                 <i id = 'logout-icon' className = 'fas fa-power-off'></i>

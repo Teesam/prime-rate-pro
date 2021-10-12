@@ -10,7 +10,7 @@ const RegisteredUserRoutes = ({ component: Component, ...rest }) => {
             {...rest} 
             render = {
                 (props) => {
-                    if( status.toLowerCase().includes('verified') ){
+                    if( status?.toLowerCase().includes('verified') ){
                         return <Component {...props} />
                     }else{
                         return <Redirect to = {{ pathname: '*', state: { from: props.location }}} />

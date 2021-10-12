@@ -43,13 +43,11 @@
     align-items: flex-start;
     padding-left: 2rem;
     padding-top: 3rem;
-    overflow-y: scroll;
 }
 
 #navigate-dash-info{
     display: none;
 }
-
 
 .Mobile-dashboard-logo{
     width: 3rem;
@@ -58,6 +56,14 @@
     left: 1rem;
     display: none;
 }
+
+.Mobile-top-blocker{
+    display: none;
+}
+
+
+
+
 
 
 
@@ -107,7 +113,7 @@
     }
     
     #dashboard-content{
-        width: 50%;
+        width: 100%;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
@@ -188,7 +194,7 @@
     
     #dashboard-content{
         width: 76.5%;
-        display: none;
+        display: flex;
         flex-direction: column;
         align-items: flex-start;
         padding-left: 2rem;
@@ -206,6 +212,7 @@
         position: fixed;
         top: 1rem;
         right: 0;
+        z-index: 600;
     }
 
     .Mobile-dashboard-logo{
@@ -214,6 +221,18 @@
         top: 1rem;
         left: 1rem;
         display: block;
+        z-index: 600;
+    }
+
+    .Mobile-top-blocker{
+        display: block;
+        background-image: white;
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        height: 4rem;
+        z-index: 100;
     }
 
 }

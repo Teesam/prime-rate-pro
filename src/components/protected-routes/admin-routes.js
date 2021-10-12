@@ -11,7 +11,7 @@ const AdminRoutes = ({ component: Component, ...rest }) => {
             {...rest} 
             render = {
                 (props) => {
-                    if( role.toLowerCase().includes('admin') ){
+                    if( role?.toLowerCase().includes('admin') ){
                         return <Component {...props} />
                     }else{
                         return <Redirect to = {{ pathname: '*', state: { from: props.location }}} />

@@ -15,9 +15,9 @@ const Promises = () => {
 
     return(
         <div ref = { setRef } className = 'Promises'>
-            {/* {
+            {
                 visible ?
-                <div> */}
+                <div>
                     <div className = 'First'>
                         <div className = 'Promises-first'>
                             <div  className = 'Promises-image-holder-first'>
@@ -108,11 +108,11 @@ const Promises = () => {
                             </p>
                         </div>
                     </div>
-                {/* </div>
+                </div>
 
             : ''
 
-            } */}
+            }
             
         </div>
     )

@@ -1,0 +1,62 @@
+#sync-icon{
+    font-size: 5rem;
+    padding: 2rem;
+    background-color: var(--orange);
+    border-radius: 50%;
+    color: white;
+    margin-bottom: 1rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 1370px){
+
+    #sync-icon{
+        font-size: 5rem;
+        padding: 2rem;
+        background-color: var(--orange);
+        border-radius: 50%;
+        color: white;
+        margin-bottom: 1rem;
+    }
+
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 490px){
+
+    #sync-icon{
+        font-size: 3rem;
+        padding: 1.5rem;
+        background-color: var(--orange);
+        border-radius: 50%;
+        color: white;
+        margin-bottom: 1rem;
+    }
+
+}

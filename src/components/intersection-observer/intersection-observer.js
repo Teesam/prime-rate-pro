@@ -15,11 +15,11 @@ const useOnScreen = ( options ) => {
             observer.observe(ref);
         }
 
-        return () => {
-            if(ref){
-                observer.unobserve(ref)
-            }
-        }
+        // return () => {
+        //     if(ref){
+        //         observer.unobserve(ref)
+        //     }
+        // }
 
     }, [ setRef, options ])
 

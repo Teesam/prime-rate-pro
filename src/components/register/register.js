@@ -6,6 +6,7 @@ import Loading from '../loading/loading';
 import Modal from '../modal/modal';
 import CloseAlert from '../asset/close alert.png';
 import Nav from '../nav/nav';
+import Footer from '../footer/footer';
 
 const Register = () => {
 
@@ -49,6 +50,7 @@ const Register = () => {
                 {/* <h2 onClick = { () => history.push('/')} id = 'logo'>Logo</h2> */}
                 <Nav />
             </div>
+            <div id = 'top-blocker'></div>
             <div id = 'form-holder'>
                 <h2>Create Your Free Account</h2>
                 <div>
@@ -141,12 +143,15 @@ const Register = () => {
                             setLoading(true);
                         }}
                         id = 'register-button'
-                        style = { newUserData.email == '' || newUserData.password == '' || newUserData.firstName == '' || newUserData.lastName == '' || newUserData.mobilePhone == '' ? { opacity: '0.4' } : {} }
+                        disabled = { termsCheck == false || newUserData.email == '' || newUserData.password == '' || newUserData.firstName == '' || newUserData.lastName == '' || newUserData.mobilePhone == '' }
+                        style = { termsCheck == false || newUserData.email == '' || newUserData.password == '' || newUserData.firstName == '' || newUserData.lastName == '' || newUserData.mobilePhone == '' ? { opacity: '0.4' } : {} }
                     >
                         Create Account
                     </button>
                 </form>
             </div>
+
+            <Footer />
 
             {
                 successfulModalSwitch == true ? 

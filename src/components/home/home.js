@@ -18,6 +18,8 @@ const Home = () => {
         <div className = 'Home'>
             <Nav />
 
+            <div id = 'top-blocker'></div>
+
             <header id = 'home-header'>
                 <div id = 'header-top'>
                     <div id = 'header-left'>

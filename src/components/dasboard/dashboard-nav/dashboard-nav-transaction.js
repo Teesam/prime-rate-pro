@@ -15,7 +15,7 @@ const DashboardNavTransaction = ({ dispatch }) => {
                     <button 
                         onClick = { () =>{ 
                             history.push('/');
-                            localStorage.removeItem('token');
+                            localStorage.clear();
                             dispatch({ type: 'LOGOUT' })
                         }} 
                         id = 'dashboard-top-logout'
@@ -42,7 +42,7 @@ const DashboardNavTransaction = ({ dispatch }) => {
             <button 
                 onClick = { () =>{ 
                     history.push('/');
-                    localStorage.removeItem('token');
+                    localStorage.clear();
                     dispatch({ type: 'LOGOUT' })
                 }} 
                 id = 'dashboard-bottom-logout'

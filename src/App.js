@@ -18,6 +18,8 @@ import ConfirmEmail from './components/confirm-email/confirm-email';
 import RegisteredUserRoutes from './components/protected-routes/registered-user-route';
 import AdminRoutes from './components/protected-routes/admin-routes';
 import FailedVerification from './components/confirm-email/failed-verification';
+import PaymentProcessing from './components/processing-payment/processing-payment';
+import NotFound from './components/not-found/not-found';
  
 
 const App = () => {
@@ -45,6 +47,8 @@ const App = () => {
 
               <RegisteredUserRoutes path = '/dashboard/investmentplans' strict exact component = { InvestmentPlans } />
 
+              <RegisteredUserRoutes path = '/dashboard/paymentprocessing' strict exact component = { PaymentProcessing } />
+
               <AdminRoutes path = '/admin' strict exact component = { Admin } />
 
               <AdminRoutes path = '/admin/createinvestment' strict exact component = { AdminCreateInvestment } />
@@ -56,6 +60,8 @@ const App = () => {
               <Route path = '/confirmemail' strict exact component = { ConfirmEmail } />
 
               <Route path = '/failedverification' strict exact component = { FailedVerification } />
+
+              <Route path = '*' strict exact component = { NotFound } />
 
             </Switch>
 

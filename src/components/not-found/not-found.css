@@ -1,0 +1,18 @@
+.Not-found{
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+#not-found-background{
+    width: 100vw;
+    height: 100vh;
+}
+
+#not-found-logo{
+    width: 3rem;
+    position: absolute;
+    top: 2rem;
+    left: 3rem;
+    z-index: 5;
+}

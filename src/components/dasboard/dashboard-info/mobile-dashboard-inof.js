@@ -20,7 +20,7 @@ const MobileDashboardInfo = ({ children, dispatch }) => {
             <button 
                 onClick = { () =>{ 
                     history.push('/');
-                    localStorage.removeItem('token');
+                    localStorage.clear();
                     dispatch({ type: 'LOGOUT' })
                 }} 
                 id = 'dashboard-info-logout'

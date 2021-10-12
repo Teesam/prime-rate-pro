@@ -7,6 +7,7 @@ import InvestmentPlans from '../investment-plans/investment-plans';
 import { useHistory } from 'react-router';
 import { connect } from 'react-redux';
 import MobileDashboardInfo from './dashboard-info/mobile-dashboard-inof';
+import Footer from '../footer/footer';
 
 
 const Dashboard = ({ token, dispatch }) => {
@@ -25,6 +26,8 @@ const Dashboard = ({ token, dispatch }) => {
         <div className = 'Create-investment'>
             <div>
                 <img className = 'Mobile-dashboard-logo' src = { Logo } alt = 'the logo' />
+                
+                <div className = 'Mobile-top-blocker'></div>
 
                 <DashboardNav 
                     onClick = { () => setShowMenu(false)}
@@ -107,6 +110,8 @@ const Dashboard = ({ token, dispatch }) => {
                 </DashboardInfo>
 
             </div>
+
+            <Footer />
 
             {
                 makeInvestment ?

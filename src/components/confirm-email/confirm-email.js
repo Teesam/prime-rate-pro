@@ -1,10 +1,12 @@
 import './confirm-email.css';
 import Logo from '../asset/logo.png';
 import Nav from '../nav/nav';
+import { useHistory } from 'react-router';
 
 
 const ConfirmEmail = () => {
 
+    const history = useHistory();
 
     return(
         <div className = 'Confirm-email'>
@@ -16,7 +18,7 @@ const ConfirmEmail = () => {
             <div id = 'confirm-email-holder'>
                 <i id = 'check-icon' className = 'fas fa-check-circle'></i>
                 <h2 id ='profile-title'>Verification successful</h2>
-                <button id = 'register-button'>Proceed</button>
+                <button onClick = { () => history.push('/login') } id = 'register-button'>Proceed to login</button>
             </div>
 
             <div className = 'Confirm-email-footer'>

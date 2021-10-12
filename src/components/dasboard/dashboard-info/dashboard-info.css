@@ -145,6 +145,7 @@
         right: 0;
         width: 50%;
         display: flex;
+        z-index: 600;
         flex-direction: column;
         align-items: center;
         animation-name: info-anim;
@@ -166,10 +167,10 @@
         background-color: transparent;
         border: none;
         font-weight: 600;
-        /* position: fixed;
-        bottom: 3rem;
-        right: 3rem; */
-        color: red;
+        position: fixed;
+        bottom: 2rem;
+        right: 4rem;
+        display: flex;
     }
 
 

@@ -8,6 +8,7 @@ import CloseAlert from '../asset/close alert.png';
 import { connect } from 'react-redux';
 import Nav from '../nav/nav';
 import { setUser, setToken } from '../../redux/auth/actions';
+import Footer from '../footer/footer';
 
 
 const Login = ({ dispatch }) => {
@@ -51,14 +52,14 @@ const Login = ({ dispatch }) => {
         }
     }
 
-    const clearLocalStorage = async () => {
-        try{
-            const response = await localStorage.clear();
-            loginHandler()
-        }catch(error){
-            const { message } = apiErrorHandler(error);
-        }
-    }
+    // const clearLocalStorage = async () => {
+    //     try{
+    //         const response = await localStorage.clear();
+    //         loginHandler()
+    //     }catch(error){
+    //         const { message } = apiErrorHandler(error);
+    //     }
+    // }
 
     const history = useHistory();
 
@@ -68,6 +69,8 @@ const Login = ({ dispatch }) => {
                 {/* <h2 onClick = { () => history.push('/')} id = 'logo'>Logo</h2> */}
                 <Nav />
             </div>
+            
+            <div id = 'top-blocker'></div>
             <div id = 'form-holder'>
                 <h2>Login</h2>
                 <div>
@@ -103,7 +106,8 @@ const Login = ({ dispatch }) => {
                     
                     <button 
                         onClick = { () => {
-                            clearLocalStorage();
+                            // clearLocalStorage();
+                            loginHandler();
                             setLoading(true);
                         }} 
                         id = 'register-button'
@@ -112,6 +116,8 @@ const Login = ({ dispatch }) => {
                     </button>
                 </form>
             </div>
+
+            <Footer />
 
 
             {

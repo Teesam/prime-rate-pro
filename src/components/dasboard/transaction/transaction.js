@@ -6,6 +6,7 @@ import { useState } from 'react';
 import InvestmentPlans from '../../investment-plans/investment-plans';
 import MobileDashboardInfo from '../dashboard-info/mobile-dashboard-inof';
 import { useHistory } from 'react-router';
+import Footer from '../../footer/footer';
 
 const Transaction = () => {
 
@@ -18,6 +19,8 @@ const Transaction = () => {
         <div className = 'Transaction'>
             <div>
                 <img className = 'Mobile-dashboard-logo' src = { Logo } alt = 'the logo' />
+                
+                <div id = 'top-blocker'></div>
                 
                 <DashboardNavTransaction />
 
@@ -61,8 +64,7 @@ const Transaction = () => {
 
             </div>
 
-            {/* <Footer /> */}
-
+            <Footer />
             {
                 makeInvestment ?
                 

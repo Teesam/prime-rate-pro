@@ -128,3 +128,298 @@
     overflow-y: scroll;
     margin-top: 2rem;
 }
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 1370px){
+
+    .Investment-plans{
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: white;
+        width: 50%;
+        height: auto;
+        padding: 2rem;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        height: 90vh;
+        overflow-y: scroll;
+    }
+    
+    #exit-icon{
+        width: 3rem;
+        height: 3rem;
+        color: rgb(245, 9, 9);
+        cursor: pointer;
+        background-color: #ebebf3;
+        font-size: 2rem;
+        padding: .5rem;
+        font-weight: 300;
+    }
+    
+    #investment-plans-holder{
+        width: 100%;
+    }
+    
+    #investment-plans-button{
+        text-decoration: none;
+        background-color: var(--project-red);
+        padding: .5rem 1rem;
+        border-radius: 5px;
+        border: none;
+        width: 60%;
+        color: white;
+        height: 3rem;
+        margin-top: 2rem;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        cursor: pointer;
+    }
+    
+    #investment-plans-overlay{
+        background-color: #0008;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+    }
+    
+    #close-icon-holder{
+        display: flex;
+        justify-content: flex-end;
+        width: 100%;
+    }
+    
+    .Plan{
+        width: 80%;
+        background-image: url('../asset/invest\ \ background.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: auto;
+        margin-top: 1rem;
+        border-radius: 5px;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem;
+        color: white;
+        position: relative;
+    }
+    
+    #plans-overlay{
+        background-color: black;
+        opacity: .8;
+        position: absolute;
+        border-radius: 5px;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+    }
+    
+    .Plan-name{
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-bottom: .5rem;
+    }
+    
+    .Invest-button{
+        padding: .5rem 2rem;
+        border-radius: 50px;
+        border: 1px solid transparent;
+        background-color: var(--yellow);
+        cursor: pointer;
+        color: white;
+        transition: .3s ease-in-out;
+        z-index: 3;
+    }
+    
+    .Invest-button:hover{
+        color: var(--yellow);
+        background-color: transparent;
+        border: 1px solid var(--yellow);
+    }
+    
+    .Plans-details{
+        z-index: 3;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-evenly;
+    }
+    
+    #plans-holder{
+        width: 100%;
+        height: 90vh;
+        overflow-y: scroll;
+        margin-top: 2rem;
+    }
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 490px){
+
+
+    .Investment-plans{
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: white;
+        width: 90%;
+        height: auto;
+        padding: 2rem;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        height: 90vh;
+        overflow-y: scroll;
+    }
+    
+    #exit-icon{
+        width: 3rem;
+        height: 3rem;
+        color: rgb(245, 9, 9);
+        cursor: pointer;
+        background-color: #ebebf3;
+        font-size: 2rem;
+        padding: .5rem;
+        font-weight: 300;
+    }
+    
+    #investment-plans-holder{
+        width: 100%;
+    }
+    
+    #investment-plans-button{
+        text-decoration: none;
+        background-color: var(--project-red);
+        padding: .5rem 1rem;
+        border-radius: 5px;
+        border: none;
+        width: 60%;
+        color: white;
+        height: 3rem;
+        margin-top: 2rem;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        cursor: pointer;
+    }
+    
+    #investment-plans-overlay{
+        background-color: #0008;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+    }
+    
+    #close-icon-holder{
+        display: flex;
+        justify-content: flex-end;
+        width: 100%;
+    }
+    
+    .Plan{
+        width: 80%;
+        background-image: url('../asset/invest\ \ background.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: auto;
+        margin-top: 1rem;
+        border-radius: 5px;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem;
+        color: white;
+        position: relative;
+    }
+    
+    #plans-overlay{
+        background-color: black;
+        opacity: .8;
+        position: absolute;
+        border-radius: 5px;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+    }
+    
+    .Plan-name{
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-bottom: .5rem;
+    }
+    
+    .Invest-button{
+        padding: .5rem 2rem;
+        border-radius: 50px;
+        border: 1px solid transparent;
+        background-color: var(--yellow);
+        cursor: pointer;
+        color: white;
+        transition: .3s ease-in-out;
+        z-index: 3;
+    }
+    
+    .Invest-button:hover{
+        color: var(--yellow);
+        background-color: transparent;
+        border: 1px solid var(--yellow);
+    }
+    
+    .Plans-details{
+        z-index: 3;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-evenly;
+    }
+    
+    #plans-holder{
+        width: 100%;
+        height: 90vh;
+        overflow-y: scroll;
+        margin-top: 2rem;
+    }
+
+
+
+
+}
